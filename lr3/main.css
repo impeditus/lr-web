@@ -1,0 +1,68 @@
+
+@font-face {
+    font-family: Geometria;
+    src: url('Geometria-Medium.ttf');
+  }
+  
+  @font-face {
+    font-family: GeometriaExtraBold;
+    src: url('Geometria-ExtraBold.ttf');
+  }
+  
+  
+  @font-face {
+      font-family: Gilroy;
+      src:url('Gilroy-Light.otf');
+  }
+  
+  @font-face{
+    font-family: GeometriaBold;
+    src: url('Geometria-Bold.ttf')
+  }
+
+body {
+    background-position: bottom;
+    background-image: url('img.jpg');
+    background-repeat: repeat-x;
+    
+
+   
+}
+ul{
+    list-style-type: square;
+}
+
+.mainHeader{
+    margin-left: 42%;
+    font: 1em sans-serif;
+    font-size: 58px;
+    color: rgb(102, 102, 102);
+}
+
+.info{
+    
+    font-family: Gilroy;
+    font-size: 40px;
+    color: rgb(78, 120, 197)
+
+}
+.foto{
+    border-radius: 10px;
+    height: 320px;
+    width: 180px;
+    margin-left: 43%;
+}
+.myInfo{
+    padding: 20px;
+    font-family:Geometria;
+    font-size: 20px;
+    color: rgb(0, 31, 92);
+    border: 4px dashed silver;
+}
+.bord{
+    border: 3px dotted silver;
+    margin-right: 40px;
+}
+.blutext{
+    color: rgb(57, 73, 104);
+}

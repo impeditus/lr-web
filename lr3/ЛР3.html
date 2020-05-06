@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Резюме</title>
+        <link href="main.css" rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+	<h1 >
+        <b class="mainHeader"> Резюме </b>
+    </h1>
+	 <img class="foto" src="myphoto.jpg"/> <img>
+        <h2  class="info">Персональні дані</h2>
+        <div class="myInfo">  
+        <ul>
+            <li>Прізвище: <i>Дьоміна</i></li>
+			<li>Ім'я: <i>Анастаcія</i></li>
+            <li>По-батькові: <i>Іванівна</i></li>
+            <li>Дата народження: <i>09.09.2000</i></li>
+        </ul>
+        </div>
+
+        <h2 class="info">Освіта</h2>
+        <div class="myInfo"> 
+        <ul>
+            <li>Хмельницький національний університет, ФПКТС, <u>Інженерія програмного забезпечення</u></li>
+            <li>Ужгородська ЗОШ I-III №8</li>
+        </ul>
+        </div>
+        <h2 class="info">Інформація про досвід роботи</h2>
+        <p class="myInfo">Наразі досвід за фахом <b>відсутній</b></p>
+        <h2 class="info">Професійні навички</h2>
+        <div class="myInfo"> 
+        <ul>
+            <li> <h3 class="blutext">Рівень володіння комп'ютером: <i>високий</i></h3></li>
+            <li><h3 class="blutext">Рівень володіння ПЗ</h3>
+                
+				<ol class="bord">
+					<li>Microsoft Office:<i> вище середнього</i></li>
+					<li>Visual studio:<i> високий</i></li>
+					<li>IntelliJ IDEA:<i> середній</i></li>			
+					<li>Photoshop:<i> вище середнього</i></li>
+					<li>Autodesk inventor:<i> середній</i></li>
+					<li>Unity:<i> середній</i></li>
+				</ol>
+			</li>
+            <li><h3 class="blutext">Рівень знання мов програмування</h3>
+				<ol class="bord">
+					<li>C#<i> високий</i></li>
+					<li>C<i> вище середнього</i></li>
+					<li>Java<i> середній</i></li>
+					<li>C++<i> базовий</i></li>
+				</ol>
+			</li>
+			<li><h3 class="blutext">Рівень знання мов </h3>
+				<ol class="bord">
+					<li>українаська<i> рідна</i></li>
+					<li>російська<i> рідна</i></li>
+					<li>англійська<i> Intermediate</i></li>
+					<li>французька<i> Pre-intermediate</i></li>
+				</ol>
+			</li>
+        </ul>
+        </div>
+        <h2  class="info">Контактна Інформація</h2>
+        <div class="myInfo"> 
+        <ul>
+            <li>Email: mari1234532@gmail.com</li>
+            <li>Телефон: 0668206003</li>
+        </ul>
+        
+	<p><a href="https://www.facebook.com/profile.php?id=100006963610252"><img src="fb.png" width="50" 
+    height="50" alt="facebook"></a>
+    <a href="https://www.instagram.com/daishnica09/"><img src="ig.png" width="50" 
+    height="50" alt="instagram"></a></p>
+    </div>
+    <h3>
+        <form name="mainForm" id="mainForm" method="GET" onSubmit="return checkAll()">
+            <p>Ім'я: <input type="text" name="name" id="name" onBlur="validateName()">
+                <span style="color: red; font-size: 14px;" id="na"></span><br>
+            </p>
+            <p>
+                Електронна пошта: <input type="email" name="email" id="email" onBlur="validateEmail()">
+                <span style="color: red; font-size: 14px;" id="em"></span><br>
+            </p>
+            <p>Телефон: <input type="tel" name="phone" id="phone" onBlur="validatePhone()">
+                <span style="color: red; font-size: 14px;" id="tel"></span><br>
+            </p>
+            <p><textarea name="message" rows="3" cols="45" placeholder="Текст повідомлення" onBlur="messageLength()" ></textarea><br>
+                <span style="color: rgb(0, 153, 0); font-size: 14px;" id="msg"></span><br>
+            </p>
+            <p><input type="submit" style="color: rgb(0, 60, 128); font-size: 14px;" value="Надіслати"></p>
+         </form>
+        <div class="ЛР3_табл">
+            <a href="ЛР3_табл.html" target="_blank">Я вмію створювати таблиці</a>
+        </div>
+    </h3>
+    <script>
+        function validateName(){
+  var x = document.forms["mainForm"]["name"].value;
+  var letters = /^[A-Za-zА-Яа-яіїєІЇЄ]+$/;
+  if (letters.test(x)) {
+    document.getElementById('na').innerHTML = '';
+    return true;
+  } else {
+    document.getElementById('na').innerHTML = 'Використовуйте тільки латиницю або кирилицю для вводу';
+    if (x.length ===0)
+      document.getElementById('na').innerHTML = 'Поле не може бути пустим ';
+    return false;
+  }
+}
+
+function validateEmail(){
+  var x = document.forms["mainForm"]["email"].value;
+  var atpos = x.indexOf("@");
+  var dotpos = x.lastIndexOf(".");
+  if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length){
+    document.getElementById('em').innerHTML = 'Некоректна електронна пошта';
+    if (x.length ===0)
+      document.getElementById('em').innerHTML = 'Поле не може бути пустим ';
+    return false;
+  } else {
+    document.getElementById('em').innerHTML = '';
+    return true;
+  }
+}
+
+function validatePhone(){
+  var x = document.forms["mainForm"]["phone"].value;
+  var numbers = /^[\d\(\)\ - +]{12,14}\d$/;
+    if (numbers.test(x)) {
+      document.getElementById('tel').innerHTML = '';
+        return true;
+    } else {
+    document.getElementById('tel').innerHTML = 'Використовуйте тільки арабські цифри, пробіли та символи "+", "-", "(", ")"';
+    if (x.length ===0)
+    document.getElementById('tel').innerHTML = 'Поле не може бути пустим ';
+    return false;
+  }
+}
+
+function messageLength(){
+  var x = document.forms["mainForm"]["message"].value;
+  messageLen = x.length;
+  if (messageLen > 0){
+  document.getElementById('msg').innerHTML = 'Використано символів: ' + messageLen;
+return true;
+} else{
+  document.getElementById('msg').innerHTML = '';
+    return false;
+  }
+}
+
+function checkAll(){
+  if(validateEmail() && validateName() && validatePhone()) return true;
+  else return alert("Невірно введені дані!");
+}
+    </script>
+    </body>
+</html>
